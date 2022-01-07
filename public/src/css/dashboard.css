@@ -1,0 +1,76 @@
+body{
+  margin:0 auto;
+}
+#main{
+  min-height: 100vh;
+}
+.list-group-item-disable:hover{
+  color:white;
+  background: #343a40;
+}
+#menu{
+  background: #343a40;
+}
+#content{
+  background: #f4f6f9;
+}
+.row{
+  margin: 0px;
+}
+.row > *{
+  padding: 0px;
+}
+.list-group{
+  border-radius: 0px;
+}
+.list-group-item{
+  color:white;
+  background: #343a40;
+}
+.mb-1{
+  font-weight: lighter;
+}
+.logo{
+  position: relative;
+  top:-4px;
+  width:32px;
+  height: auto;
+}
+nav{
+  padding: 0px 10px;
+}
+.navbar{
+
+  background: white;
+}
+#service-list{
+  padding: 25px;
+}
+
+#service-list > .card{
+  margin:10px;
+  padding: 10px;
+}
+.add-icon{
+  width:64px;
+}
+
+.add-card{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.add-card:hover > .add-icon{
+  opacity: 0.3;
+}
+.add-card:active > .add-icon{
+  opacity: 0.7;
+}
+
+.language-icon{
+  width:32px;
+}
+
+.hidden{
+  display: none;
+}

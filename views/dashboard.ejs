@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | OSD</title>
+  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/src/css/dashboard.css">
+  <script src="common/js/sweetalert2.min.js"></script>
+  <script src="src/js/dashboard.js"></script>
+</head>
+<body>
+  <div id="main" class="row w-100 main-grid">
+    <div id="menu" class="col-md-3 col-lg-2">
+      <div class="list-group dark-bg">
+        <span class="list-group-item list-group-item-action flex-column align-items-start list-group-item-disable">
+          <img src="src/images/AdminLogo.png" alt="" class="logo brand-image img-circle elevation-3">
+          <span class="mb-1 p-1">Dashboard</span>
+        </span>
+        <span  class="list-group-item list-group-item-disable">
+          <p class="lead mb-1">Welcome back <b><%= user.username %></b></p>
+        </span>
+
+        <hr style="border: 2px solid gray;margin:0px;">
+
+      </div>
+    </div>
+    <div id="content" class="col-md-9 col-lg-10 main-grid">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#">Service</a>
+      </nav>
+      <div id="service-list" class="row container">
+
+        <div class="card col-auto col-sm-12" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <img class="language-icon" src="src/images/python-icon.png">
+              <span>URL Shortenter </span>
+            </h5>
+            <hr>
+            <p class="card-text"><b>Language: </b><span>Python</span></p>
+            <p class="card-text"><b>Run: </b><span>offline</span></p>
+            <a href="#" class="btn btn-success">Start</a>
+            <a href="#" class="btn btn-outline-danger">Stop</a>
+            <a href="#" class="btn btn-outline-primary">Details</a>
+          </div>
+        </div>
+
+        <div class="card col-auto col-sm-12" style="width: 18rem;">
+          <div id="add-service-btn" class="card-body add-card" onclick="alert('Javascript is not been loaded.');">
+            <img src="src/images/cloud-plus.svg" class="add-icon">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="default-form" class="hidden">
+    <form action="/api/v1/app" method="POST">
+      <div class="form-group pt-4">
+        <input class="form-control" type="text" name="title" placeholder="Service name">
+      </div>
+      <div class="form-group pt-2">
+        <input type="url" name="repo" id="repo" class="form-control" placeholder="Repositoriy URL">
+      </div>
+      
+      <div class="form-group pt-2 row">
+        <div class="col-3 pt-2">
+          Language:
+        </div>
+        <div class="col-9">
+          <select name="template_id" class="form-control">
+            <option value="-1" disabled selected>Language</option>
+            <option value="1">Python <img class="language-icon" src="src/images/python-icon.png"></option>
+          </select>
+        </div>
+      </div>
+
+      <hr>
+      <input type="submit" value="Create" class="btn btn-outline-success">
+    </form>
+  </div>
+</body>
+</html>
